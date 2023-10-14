@@ -74,6 +74,14 @@ function EventForm({ method, event }) {
         <button type="button" onClick={cancelHandler} disabled={isSubmitting}>
           Cancel
         </button>
+        {/*DISINI KITA BISA LIHAT BAHWA KALAU KITA HAPUS TOKEN NYA, MAKA TIDAK AKAN DI UPDATE LOADER DATA NYA, BUKAN SEPERTI STATE, PREFER PAKAI REDUX TOOLKIT AJA */}
+        <button
+          type="button"
+          onClick={() => localStorage.removeItem('token')}
+          disabled={isSubmitting}
+        >
+          Logout
+        </button>
         <button disabled={isSubmitting}>
           {isSubmitting ? 'Submitting...' : 'Save'}
         </button>
